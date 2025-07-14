@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app_style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <script src="webrtc_chat.js" defer></script>
+    <title>chat</title>
+  </head>
+  <body>
+    <!-- multiplayer buttons -->
+    <button id="connectButton" name="connectButton" class="buttonleft">
+      Connect
+    </button>
+    <button id="disconnectButton" name="disconnectButton" class="buttonright" disabled>
+      Disconnect
+    </button>
+    <br/>
+
+    <!-- submit token -->
+    <form onsubmit="handleSubmit(event)" id="tokenInputForm">
+      <input type="text" id="inputBox" placeholder="offer..." required />
+      <button type="submit">Submit Token</button>
+    </form>
+
+    <!-- token -->
+    <div style="display: none;flex-direction: column;width: 200px;overflow: hidden;" id="token-box" >
+      <span id="token_type">offer token:</span>
+      <span id="token" style="overflow: hidden; text-overflow: ellipsis; width: 200px" >
+        Token.....
+      </span>
+      <button id="copy_to_clipboard" disabled>copy</button>
+    </div>
+
+    <!-- chat box -->
+    <div class="message_box">
+      <div id="message_text_area" ></div>
+      <div id="send_message_box">
+        <span>></span>
+        <input type="text" name="message" id="message" placeholder="Message text" inputmode="latin" maxlength="120"/>
+        <button id="sendButton" name="sendButton" >Send</button>
+      </div>
+    </div>
+  </body>
+</html>
