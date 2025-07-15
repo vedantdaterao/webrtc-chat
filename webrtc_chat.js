@@ -36,12 +36,10 @@ window.onload = () => {
 
   message_input = document.getElementById("message");
   message_input.addEventListener("focus", () => {
-    setTimeout(() => {
-      message_input.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-    }, 1);
+    message_input.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
   });
 
   button_connect = document.getElementById("connectButton");
@@ -249,13 +247,9 @@ function disconnectPeers() {
   dataChannel.close();
 
   // Close the RTCPeerConnections
-  if (peer === null) {
-    peer.close();
-  } else {
-    peer.close();
-  }
+  peer.close();
+  
   dataChannel = null;
-  peer = null;
   peer = null;
 
   // Update user interface elements
